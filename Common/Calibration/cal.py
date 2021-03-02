@@ -1,10 +1,25 @@
 """
 **************************************NOTES****************************************
 **************************************INSTRUCTIONS**********************************
-File you need: 
-cal_name.txt : directory
-cal_name_file.txt : for the files (like starphots and output)
-cal_date.txt : for directory 
+To use the script, you can put it anywhere you like on analysis. The default wdir is '/data/shinkley/Keck_Data/completed_stars/DangerZone/'.
+An example output and files required has been uploaded on github under 'Common/Calibration'
+
+Usage: 
+	python cal.py <cal_name> <cal_date> <cal_name_file> <mag> <output>
+
+
+	File you need: 
+		cal_name [.txt] : any text file contains the name of the directory (e.g. HIP16095)
+		cal_name_file [.txt] : any text file contains the name of the contrast output (e.g. HIP_16095)
+		cal_date [.txt] : any text file contains the date of the dir (e.g. 2017sep01) 
+		mag [.txt]: magnitude of the targets and the PSF 
+
+	Ouput: 
+		output: name.csv file which contains the ['name', 'date', 'mag', 'mag_psf','factor']. 
+
+Example: 
+	python cal.py cal_name.txt cal_date.txt cal_name_file.txt mag.txt output 
+
 
 """
 m = 0.1
@@ -20,6 +35,7 @@ pxscale_keck=0.00953 		#Pixel scale for keck 2.
 sigma = 5					#Sets the value of sigma for the contrast curves.
 sub_count = 0
 im = 0.1
+wdir = '/data/shinkley/Keck_Data/completed_stars/DangerZone/'
 
 """
 End of variables 
@@ -270,7 +286,7 @@ def main ():
 	m_psf = np.zeros(len(name))
 	data = []
 
-	os.chdir('/data/shinkley/Keck_Data/completed_stars/DangerZone/')
+	os.chdir(wdir)
 
 	for b in range (0,len(name)):
 		os.chdir('{star_name}/{epoch}'.format(star_name=name[b],epoch=date[b]))
