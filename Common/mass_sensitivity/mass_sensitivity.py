@@ -46,7 +46,7 @@ SHOW_SURFACE = False #Change to 'True' if plot of surface of baraffe data is req
 #loads contrast data from file into array and returns orbital seperation and mag
 def load_contrast_data(name,epoch):
     
-    path= "inputs/" + name.replace("_","") + "_" + METHOD + "_contrast_curve_" + epoch + "_new.txt" #format of contrast curve file name, change accordingly
+    path= "inputs/" + name + "_" + METHOD + "_contrast_curve_" + epoch + "_new.txt" #format of contrast curve file name, change accordingly
     contrast_curve=np.zeros((497,2)) #each _new contrast curve file has 497 lines --> if the RDI script is changed this may be different so double check
     with open(path) as f:
         lines = f.readlines()
