@@ -145,7 +145,7 @@ def run_exo_dmc(name,epoch,dist,ID,method_1,method_2):
     # the set_grid method allows to change range or resolution of the grid 
     map.set_grid(x_min=1, x_max=1000, y_min=10, y_max=100, logx=True, logy=True)
     
-    path="input/" + method_1 + "_" + name + "_" + epoch + "_mass_sensitivity_data.txt"       
+    path="inputs/" + method_1 + "_" + name + "_" + epoch + "_mass_sensitivity_data.txt"       
     data=np.loadtxt(path)
     xlim=data[:,0] # separation (arcsec)
     ylim=data[:,2] # mass (mjup )    
