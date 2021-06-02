@@ -2,8 +2,6 @@
     PROJECT NAME: CONTRAST CURVE
     
     DESCRIPTION: Turns contrast/radius curves to mass/radius
-    Edited version of original mass_sensitivity.py so that it can be run on
-    analysis.
     
     Input Files:
         text file containing Baraffe+ 2003 isochrones
