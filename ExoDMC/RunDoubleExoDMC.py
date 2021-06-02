@@ -20,9 +20,9 @@ Input Files:
             star_name, epoch, best_Age(Myr), oldest_Age(Myr), youngest_age(Myr), 
             distance(pc), apparent magnitude (k-band)
     
-to compare detection sensitivity for two methods run as:
-    python RunExoDMC.py [file containing star names+data] [method 1] [method 2]
-    e.g. python RunExoDMC.py starnames.csv RDI ADI
+Change lines 189-191 to reflect the file name containing list of stars, and post-processing method used on the data:
+    for a comparison of two methods, change lines 190 + 191 to the methods used 
+    for a full map of a single method, change 'method_2' on line 191 to say 'SINGLE'
     
 """
 
