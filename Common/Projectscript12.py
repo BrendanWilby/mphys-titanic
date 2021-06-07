@@ -555,11 +555,13 @@ def Contrastcurvedata(contrast_curve, pxscale_keck, sigma, name_input, algo):
 	np.savetxt('new_{algo}_{star_name}_curve_outputs'.format(algo=algo, star_name=name_input), contrast_curve)
 	
 	#Initialises the contrast curve variables
-	size = 500
+	size = 496
 
 	distance = np.zeros(size)
 	sensitivity_Gauss = np.zeros(size)
 	sensitivity_Student = np.zeros(size)
+	
+	contrast_curve=np.array(contrast_curve) #changes from pandas dataframe to numpy array
 
 	"""
     PANDAS DATAFRAME: (IF STUDENT == TRUE)
@@ -607,7 +609,7 @@ def Contrastcurvedata(contrast_curve, pxscale_keck, sigma, name_input, algo):
 	#Creates the variables that will be plotted.
 	Curve = plt.plot(distance, sensitivity_Gauss, linewidth =2, color='red')
 
-	plt.show(Curve)
+	plt.show()
 	
 
 
